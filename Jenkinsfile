@@ -14,7 +14,7 @@ pipeline
            			 sh '''
 				   cd terraform-create-ec2-instance
              			  /usr/local/bin/terraform init
-              			  /usr/local/bin/terraform apply -auto-approve -var access_key=${AWS_KEY} -var secret_key=${AWS_SECRET}
+              			  /usr/local/bin/terraform apply -auto-approve -var access_key=AKIAYMR2SHI5APMT5LXT -var secret_key=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
              			  git add terraform.tfstate
                
            			 '''
