@@ -12,7 +12,6 @@ pipeline
            			 sh 'rm -rf repository'
            			 sh 'git clone https://github.com/sowmianreddy/terraform-create-ec2-instance.git'
            			 sh '''
-              			 cd repository
              			  terraform init
               			  terraform apply -auto-approve -var access_key=${AWS_KEY} -var secret_key=${AWS_SECRET}
              			  git add terraform.tfstate
