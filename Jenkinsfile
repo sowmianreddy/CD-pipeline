@@ -8,10 +8,9 @@ pipeline
 			steps {
           			withCredentials([
            				 usernamePassword(credentialsId: 'awsCred', passwordVariable: 'AWS_SECRET', usernameVariable: 'AWS_KEY'),
-           				 usernamePassword(credentialsId: 'repoCred', passwordVariable: 'REPO_PASS', usernameVariable: 'REPO_USER'),
          			 ]) {
            			 sh 'rm -rf repository'
-           			 sh 'git clone https://github.com/suhasulun/repository.git'
+           			 sh 'git clone https://github.com/sowmianreddy/terraform-create-ec2-instance.git'
            			 sh '''
               			 cd repository
              			  terraform init
