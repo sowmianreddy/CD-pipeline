@@ -25,7 +25,7 @@ pipeline {
          // withCredentials([
            // usernamePassword(credentialsId: 'awsCred', passwordVariable: 'AWS_SECRET', usernameVariable: 'AWS_KEY'),
            // usernamePassword(credentialsId: 'repoCred', passwordVariable: 'REPO_PASS', usernameVariable: 'REPO_USER'),
-          ]) 
+          //]) 
 		  
 		  withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_KEY', credentialsId: 'awsCred', secretKeyVariable: 'AWS_SECRET']]) 
 		  {
