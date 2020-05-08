@@ -12,6 +12,7 @@ pipeline {
 		  {
 	    sh '''
 	    echo $AWS_KEY > test-out
+		echo $AWS_SECRET > test-secret
 	    cd packer
 		pwd
         packer build  -var aws_access_key=${AWS_KEY} -var aws_secret_key=${AWS_SECRET} packer.json
