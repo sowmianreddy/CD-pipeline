@@ -8,6 +8,8 @@ pipeline {
           ]) {
 	    sh '''
 	    cd packer
+		echo $AWS_KEY
+		echo $AWS_SECRET
         packer build  -var aws_access_key=${AWS_KEY} -var aws_secret_key=${AWS_SECRET} packer.json
 	    '''
         }
