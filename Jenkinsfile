@@ -3,9 +3,13 @@ pipeline {
   stages {
     stage('Create Packer AMI') {
         steps {
-          withCredentials([
-            usernamePassword(credentialsId: 'awsCred', passwordVariable: 'AWS_SECRET', usernameVariable: 'AWS_KEY')
-          ]) {
+
+        //  withCredentials([
+            //usernamePassword(credentialsId: 'awsCred', passwordVariable: 'AWS_SECRET', usernameVariable: 'AWS_KEY')
+//          ])
+
+		withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_KEY', credentialsId: 'awsCred', secretKeyVariable: 'AWS_SECRET']]) 
+		  {
 	    sh '''
 	    cd packer
 		echo $AWS_KEY
