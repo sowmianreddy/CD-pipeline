@@ -15,9 +15,8 @@ pipeline {
 			echo $AWS_SECRET > test2
 			cd packer
 			pwd
-			
-			packer --version
-			packer -- help
+			/usr/local/bin/packer --version
+			/usr/local/bin/packer --help
 	    '''
         }
       }
